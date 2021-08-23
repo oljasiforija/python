@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}     
+        {% if messages %}                            
+        {% for message in messages %}            
+        <p>{{message}}</p>                   
+            {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h3>Edit {{car.model}} </h3>
+    <form action="/dashboard/{{car.id}}/update" method="POST">
+        Price: $ <input type="number" name="price" value="{{car.price}}">
+        Model: <input type="text" name="model" value="{{car.model}}">
+        Make: <input type="text" name="make" value="{{car.make}}">
+        Year: <input type="number" name="year" value="{{car.year}}">
+        Description: <input type="text" name="description" value="{{car.description}}">
+        <input type="submit" value="Update">
+        </form>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}     
+        {% if messages %}                            
+        {% for message in messages %}            
+        <p>{{message}}</p>                   
+            {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h3> Edit Recipe</h3>
+    <form action="/recipes/{{recipes.id_recipes}}/update" method="POST">
+        Name: <input type="text" name="name" value="{{recipes.name}}">
+        Description: <input type="text" name="description" value="{{recipes.description}}">
+        Instructions: <input type="text" name="instructions" value="{{recipes.instructions}}">
+        Date made on: <input type="date" name="date" value="{{recipes.date}}">
+        Under 30 min: 
+                        Yes <input type="radio" name="under_30_min" value="0">
+                        No <input type="radio" name="under_30_min" value="1">
+        <input type="submit" value="Update">
+    
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+</body>
+</html>

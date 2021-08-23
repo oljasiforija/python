@@ -1,0 +1,14 @@
+body{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 10%;
+}
+form{
+    height: 400px;
+    width: 400px; 
+    background-color: darkgrey;
+}
+div, button{
+    padding: 10px
+}

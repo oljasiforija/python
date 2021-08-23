@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<style>
+    body{display: flex; justify-content: center; align-items: center; margin-top: 10%;}
+    form{height: 400px;width: 400px; background-color: darkgrey;}
+    div, button{padding: 10px}
+</style>
+
+<body>
+    <form action='/survey' method='POST'>
+        <div class="input-group">
+            <label>First Name: </label>
+            <input type="text" name="first_name" aria-label="First name" class="form-control">
+            <label> Last Name: </label>
+            <input type="text" name="last_name" aria-label="Last name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Location: </label>
+            <select class="form-control" id="exampleFormControlSelect1" name="location">
+            <option value="chicago">Chicago</option>
+            <option value="seattle">Seattle</option>
+            <option value="los_angeles">Los Angeles</option>
+            <option value="washington_dc">Washington DC</option>
+            <option value="alaska">Alaska</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Favorite language: </label>
+            <select class="form-control" id="exampleFormControlSelect1" name="language">
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="mern">MERN</option>
+            <option value="css">CSS</option>
+            <option value="java_script">Java Script</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Comments: </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comments"></textarea>
+        </div>
+        <button type='submit' type="button" class="btn btn-secondary" >Submit!</button>
+    </form>
+    
+</body>
+</html>

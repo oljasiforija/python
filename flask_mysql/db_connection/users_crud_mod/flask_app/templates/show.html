@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Id: </th>
+                <th>First name: </th>
+                <th>Last name: </th>
+                <th>Email: </th>
+                <th>Created at: </th>
+                <th>Updated at: </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.created_at}}</td>
+                <td>{{user.updated_at}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href='/' > Home</a>
+    <a href='/delete/{{user.id}}' > Delete</a>
+    <a href='/edit' > Edit</a>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paintings</title>
+</head>
+<body>
+    <h1> Welcome {{session['first_name']}}</h1>
+    <p>Paintings</p>
+    <table>
+        <tbody>
+            {% for painting in paintings %}
+            <tr>
+                <td>
+                    <a href="/paintings/{{painting.id_painting}}"> {{painting.title}}</a>
+                </td>
+                
+                <td>by {{painting.user_id}}</td>
+                <td>
+                {% if painting.user_id == session['user_id'] %}
+                <a href="/paintings/{{painting.id_painting}}/delete">Delete</a>
+                <a href="/paintings/{{painting.id_painting}}/edit">Edit</a>
+                {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/paintings/new">Add painting</a> <br>
+    <a href="/logout">Logout</a>
+</body>
+</html>

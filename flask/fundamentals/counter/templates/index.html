@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+            .header{display: flex; flex-direction: column; justify-content: center; align-items: center;}
+            button{height: 100px; width: 150px; background-color:blue; color: white;}
+            div{ display: flex; justify-content: center; align-items: center;}
+            .click{background-color: blue; border-radius: 20%;}
+            .reset{background-color: red; border-radius: 20%;}
+            .click_btn{display: flex;flex-direction: column;}    
+            input{border-radius: 20%;}   
+    </style>
+</head>
+<body>
+    <div class="header">
+    <h1> Counter</h1>
+    <h3> {{session['counter']}}</h3>
+    </div>
+    <div>
+    <form action='/counter' method='POST' class="click_btn">
+        <button class="click" name="button_clicker"> Click! </button>
+    </form>
+    <form action='/counter1' method='POST' class="click_btn">
+        <button class="click" name="button_clicker1"> Click! </button>
+    </form>
+    <form action='/counter2' method='POST' class="click_btn">
+        <input type="text" name="input_x">
+        <button class="click" name="button_clicker2"> Click! </button>
+    </form>
+
+    <form action='/destroy_session' method='POST'>
+        <button class="reset"> Reset! </button>
+    </form>
+    </div>
+    
+</body>
+</html>

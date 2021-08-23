@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit painting</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}     
+        {% if messages %}                            
+        {% for message in messages %}            
+        <p>{{message}}</p>                   
+            {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h3>Add a painting</h3>
+    <form action="/paintings/{{paintings.id_painting}}/update" method="POST">
+    Title: <input type="text" name="title" value="{{paintings.title}}" >
+    Description: <input type="text" name="description" value="{{paintings.description}}">
+    Price: $ <input type="number" name="price" value="{{paintings.price}}">
+    <input type="submit" value="Update">
+    </form>
+
+
+
+
+
+    <a href="/paintings/new">Add a painting</a>
+    <a href="/paintings">Dashboard</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>
